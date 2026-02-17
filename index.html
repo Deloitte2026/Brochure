@@ -100,7 +100,7 @@
         .deloitte-logo {
             font-size: 24px;
             font-weight: bold;
-            color: #003366;
+            color: #fffff;
             margin-bottom: 10px;
         }
         
@@ -154,8 +154,8 @@
         // Scarica il PDF
         function downloadPDF() {
             const link = document.createElement('a');
-            link.href = '/BrochureSustainabilityAcademy.pdf';
-            link.download = '/BrochureSustainabilityAcademy.pdf';
+            link.href = 'BrochureSustainabilityAcademy.pdf';
+            link.download = 'BrochureSustainabilityAcademy.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
