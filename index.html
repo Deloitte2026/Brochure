@@ -142,7 +142,7 @@
         </div>
         
         <div class="pdf-container">
-            <embed id="pdfViewer" src="Brochure Sustainability Academy.pdf" type="application/pdf">
+            <embed id="pdfViewer" src="./BrochureSustainabilityAcademy.pdf" type="application/pdf">
         </div>
         
         <div class="footer">
@@ -154,8 +154,8 @@
         // Scarica il PDF
         function downloadPDF() {
             const link = document.createElement('a');
-            link.href = 'Brochure Sustainability Academy.pdf';
-            link.download = 'Brochure Sustainability Academy.pdf';
+            link.href = '/BrochureSustainabilityAcademy.pdf';
+            link.download = '/BrochureSustainabilityAcademy.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
