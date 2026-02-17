@@ -30,24 +30,34 @@
         .header {
             background: linear-gradient(135deg, #003366 0%, #004d80 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
+        }
+        
+        .deloitte-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #86bc25;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
         
         .header h1 {
             font-size: 32px;
             margin-bottom: 10px;
             font-weight: 600;
+            color: white;
         }
         
         .header p {
             font-size: 16px;
             opacity: 0.9;
+            color: #e0e0e0;
         }
         
         .controls {
-            background: #86bc25;
-            padding: 15px 30px;
+            background: #f9f9f9;
+            padding: 20px 30px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -57,19 +67,26 @@
         }
         
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #86bc25;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(134, 188, 37, 0.2);
         }
         
         button:hover {
-            background-color: #86bc25;
+            background-color: #6fa01f;
+            box-shadow: 0 4px 12px rgba(134, 188, 37, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
         }
         
         .pdf-container {
@@ -86,6 +103,7 @@
             height: 700px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .footer {
@@ -97,14 +115,11 @@
             color: #999;
         }
         
-        .deloitte-logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fffff;
-            margin-bottom: 10px;
-        }
-        
         @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
             .header h1 {
                 font-size: 24px;
             }
@@ -112,10 +127,12 @@
             .controls {
                 flex-direction: column;
                 align-items: stretch;
+                padding: 15px 20px;
             }
             
             button {
                 width: 100%;
+                padding: 14px 20px;
             }
             
             embed {
@@ -124,6 +141,7 @@
             
             .pdf-container {
                 min-height: 500px;
+                padding: 15px;
             }
         }
     </style>
@@ -131,12 +149,12 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Brochure Sustainability Academy</h1>
+            <h1>Sustainability Academy Brochure</h1>
         </div>
         
         <div class="controls">
             <button onclick="downloadPDF()">⬇️ Download PDF</button>
-            <button onclick="openFullscreen()">🔍 Full screen</button>
+            <button onclick="openFullscreen()">🔍 Full Screen</button>
         </div>
         
         <div class="pdf-container">
@@ -144,7 +162,7 @@
         </div>
         
         <div class="footer">
-            <p>© 2026 Deloitte. All rights reserved.</p>
+            <p>© 2026 Deloitte. All Rights Reserved.</p>
         </div>
     </div>
 
