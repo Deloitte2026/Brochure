@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download in corso...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 500px;
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px 0;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fallback-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .fallback-link:hover {
+            background-color: #0052a3;
+        }
+        
+        .file-name {
+            font-size: 14px;
+            color: #999999;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📄</div>
+        <h1>Download in corso...</h1>
+        <p>Il tuo file si sta scaricando automaticamente.</p>
+        <div class="spinner"></div>
+        <p>Se il download non inizia automaticamente, clicca il pulsante qui sotto:</p>
+        <a href="https://storagegenaiplatformprod.blob.core.windows.net/public/Brochure-Sustainability-Academy_3369b.pdf?se=2026-03-19T20%3A27%3A11Z&sp=r&sv=2025-07-05&sr=b&sig=LfNqgSEw8SJ0VcAuh7QYWjIi7a5V8b4KeXEUlEb17co%3D" class="fallback-link" id="fallbackLink" download="Brochure Sustainability Academy.pdf">Scarica il file</a>
+        <div class="file-name" id="fileName">Brochure Sustainability Academy.pdf</div>
+    </div>
+
+    <script>
+        // URL del PDF da scaricare
+        const pdfUrl = "https://storagegenaiplatformprod.blob.core.windows.net/public/Brochure-Sustainability-Academy_3369b.pdf?se=2026-03-19T20%3A27%3A11Z&sp=r&sv=2025-07-05&sr=b&sig=LfNqgSEw8SJ0VcAuh7QYWjIi7a5V8b4KeXEUlEb17co%3D";
+        const fileName = "Brochure Sustainability Academy.pdf";
+        
+        // Funzione per avviare il download
+        function startDownload() {
+            // Crea un elemento <a> invisibile
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = fileName;
+            link.style.display = 'none';
+            
+            // Aggiungi l'elemento al DOM e clicca
+            document.body.appendChild(link);
+            link.click();
+            
+            // Rimuovi l'elemento dopo un breve delay
+            setTimeout(() => {
+                document.body.removeChild(link);
+            }, 100);
+        }
+        
+        // Avvia il download quando la pagina è caricata
+        window.addEventListener('load', function() {
+            // Piccolo delay per assicurare che tutto sia pronto
+            setTimeout(startDownload, 500);
+        });
+        
+        // Fallback link per download manuale
+        document.getElementById('fallbackLink').addEventListener('click', function(e) {
+            // Permetti il download naturale del link
+        });
+    </script>
+</body>
+</html>
